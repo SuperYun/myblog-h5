@@ -1,6 +1,6 @@
 var http = require('http')
 var spawn = require('child_process').spawn
-var createHandler = require('/opt/node/lib/node_modules/github-webhook-handler')
+var createHandler = require('github-webhook-handler')
 var handler = createHandler({
   path: '/pushCode',
   secret: 'passwordis123/'
