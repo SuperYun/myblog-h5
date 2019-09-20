@@ -1,11 +1,11 @@
 {
   "entry": "server.js",
   "files": {
-    "6c7224868dd1b9cb1fea.js": "6c7224868dd1b9cb1fea.js",
+    "a884fa9d4b0817d5c5e2.js": "a884fa9d4b0817d5c5e2.js",
     "server.js": "server.js"
   },
   "maps": {
-    "6c7224868dd1b9cb1fea.js": "6c7224868dd1b9cb1fea.js.map",
+    "a884fa9d4b0817d5c5e2.js": "a884fa9d4b0817d5c5e2.js.map",
     "server.js": "server.js.map"
   }
 }
