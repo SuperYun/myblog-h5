@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
+import ClientOnly from 'vue-client-only'
+import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
-import NoSsr from './components/no-ssr.js'
 import NuxtChild from './components/nuxt-child.js'
 import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
@@ -11,7 +12,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_axios_2a057604 from 'nuxt_plugin_axios_2a057604' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_axios_5e51aaed from 'nuxt_plugin_axios_5e51aaed' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ..\\plugins\\axios (mode: 'all')
 import nuxt_plugin_mixin_3421aa6a from 'nuxt_plugin_mixin_3421aa6a' // Source: ..\\plugins\\mixin (mode: 'all')
 import nuxt_plugin_lazyload_af447860 from 'nuxt_plugin_lazyload_af447860' // Source: ..\\plugins\\lazyload (mode: 'all')
@@ -21,8 +22,19 @@ import nuxt_plugin_router_79dc5b58 from 'nuxt_plugin_router_79dc5b58' // Source:
 import nuxt_plugin_elementui_a6a1b20a from 'nuxt_plugin_elementui_a6a1b20a' // Source: ..\\plugins\\element-ui (mode: 'all')
 import nuxt_plugin_xiaoneng_02e86a85 from 'nuxt_plugin_xiaoneng_02e86a85' // Source: ..\\plugins\\xiaoneng (mode: 'client')
 
-// Component: <NoSsr>
-Vue.component(NoSsr.name, NoSsr)
+// Component: <ClientOnly>
+Vue.component(ClientOnly.name, ClientOnly)
+// TODO: Remove in Nuxt 3: <NoSsr>
+Vue.component(NoSsr.name, {
+  ...NoSsr,
+  render(h, ctx) {
+    if (process.client && !NoSsr._warned) {
+      NoSsr._warned = true
+      console.warn(`<no-ssr> has been deprecated and will be removed in Nuxt 3, please use <client-only> instead`)
+    }
+    return NoSsr.render(h, ctx)
+  }
+})
 
 // Component: <NuxtChild>
 Vue.component(NuxtChild.name, NuxtChild)
@@ -159,8 +171,8 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_2a057604 === 'function') {
-    await nuxt_plugin_axios_2a057604(app.context, inject)
+  if (typeof nuxt_plugin_axios_5e51aaed === 'function') {
+    await nuxt_plugin_axios_5e51aaed(app.context, inject)
   }
 
   if (typeof nuxt_plugin_axios_3566aa80 === 'function') {
