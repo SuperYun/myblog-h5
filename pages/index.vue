@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1>test8822</h1>
+      <h1>test88222</h1>
       <div style="height: 100vh;background-color: #000">
         <video id="wz-video" class="video-js" controls preload="auto" width="100%" height="99%" muted>
           <source src="http://wz-website-oss.chinaweizheng.com/pc/weizheng-promotional-film.mp4" type='video/mp4'>
