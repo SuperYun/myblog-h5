@@ -1,4 +1,4 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV
 export default {
   mode: 'universal',

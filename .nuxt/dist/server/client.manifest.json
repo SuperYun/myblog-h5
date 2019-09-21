@@ -4,19 +4,19 @@
     "../server/index.spa.html",
     "../server/index.ssr.html",
     "2ee13b72712d8deda083.js",
-    "51ba4a62c68d60e3afda.js",
+    "3c4dfd01ed8b71e66c27.js",
     "9c14bbf884141e8387a3.css",
     "9ced77fc44cdac1687b6.css",
     "LICENSES",
     "a4140fd0042724f03e60.css",
     "aaae3d32a623510d7bfd.js",
     "bb286aa2b733b8a6893e.js",
-    "ee6022f6b4a32ddb77b7.js",
+    "c897c36e6c9f8b4d4fb1.js",
     "fonts/535877f.woff",
     "fonts/732389d.ttf"
   ],
   "initial": [
-    "51ba4a62c68d60e3afda.js",
+    "c897c36e6c9f8b4d4fb1.js",
     "2ee13b72712d8deda083.js",
     "a4140fd0042724f03e60.css",
     "bb286aa2b733b8a6893e.js",
@@ -24,8 +24,8 @@
     "aaae3d32a623510d7bfd.js"
   ],
   "async": [
-    "9ced77fc44cdac1687b6.css",
-    "ee6022f6b4a32ddb77b7.js"
+    "3c4dfd01ed8b71e66c27.js",
+    "9ced77fc44cdac1687b6.css"
   ],
   "modules": {
     "13694497": [
@@ -1726,51 +1726,51 @@
     ],
     "7349a24b": [
       5,
-      10
+      3
     ],
     "47a0e602": [
       5,
-      10
+      3
     ],
     "6e7957a1": [
       5,
-      10
+      3
     ],
     "9f069350": [
       5,
-      10
+      3
     ],
     "279cd0de": [
       5,
-      10
+      3
     ],
-    "333248f4": [
+    "d79ce380": [
       5,
-      10
+      3
     ],
     "083fd7aa": [
       5,
-      10
+      3
     ],
-    "33aeb8f0": [
+    "4727e8d4": [
       5,
-      10
+      3
     ],
     "6813c846": [
       5,
-      10
+      3
     ],
     "32495f75": [
       5,
-      10
+      3
     ],
     "48e5b36a": [
       5,
-      10
+      3
     ],
     "e576b804": [
       5,
-      10
+      3
     ],
     "734ccdfb": [
       7,
@@ -1802,18 +1802,18 @@
     ],
     "42f9ae52": [
       5,
-      10
+      3
     ],
     "76f472a0": [
       5,
-      10
+      3
     ]
   },
   "assetsMapping": {
     "2ee13b72712d8deda083.js": "0859c165",
-    "51ba4a62c68d60e3afda.js": "6fca0322",
+    "3c4dfd01ed8b71e66c27.js": "3cdf16e1",
     "aaae3d32a623510d7bfd.js": "1a3ae26b",
     "bb286aa2b733b8a6893e.js": "7ea1d828",
-    "ee6022f6b4a32ddb77b7.js": "3cdf16e1"
+    "c897c36e6c9f8b4d4fb1.js": "6fca0322"
   }
 }
