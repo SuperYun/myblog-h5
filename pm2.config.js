@@ -1,19 +1,23 @@
 module.exports = {
   apps: [
     {
-      name: 'myblog-h5',//项目名称
-      cwd: "./",// 当前工作路径
-      script: 'npm',// 实际启动脚本
-      args: "run start",//参数
+      name: 'myblog-h5',//椤圭洰鍚嶇О
+      cwd: "./",// 褰撳墠宸ヤ綔璺緞
+      script: 'npm',// 瀹為檯鍚姩鑴氭湰
+      args: "run start",//鍙傛暟
       autorestart: true,
-      watch: true,// 监控变化的目录，一旦变化，自动重启
-      watch: [".nuxt", "nuxt.config.js"],// 监控变化的目录，一旦变化，自动重启
+      watch: true,// 鐩戞帶鍙樺寲鐨勭洰褰曪紝涓�鏃﹀彉鍖栵紝鑷姩閲嶅惎
+      watch: [".nuxt", "nuxt.config.js"],// 鐩戞帶鍙樺寲鐨勭洰褰曪紝涓�鏃﹀彉鍖栵紝鑷姩閲嶅惎
       watch_delay: 1000,
-      ignore_watch: ["node_modules"],// 从监控目录中排除
+      ignore_watch: ["node_modules"],// 浠庣洃鎺х洰褰曚腑鎺掗櫎
       watch_options: {
         "followSymlinks": false,
         "usePolling": true,
       }
+    },
+    {
+      name: 'zidongbushuserver',
+      script: 'deployed.js'
     }
   ],
 };
