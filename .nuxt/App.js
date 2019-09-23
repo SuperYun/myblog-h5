@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import { getMatchedComponentsInstances, promisify, globalHandleError } from './utils'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '..\\node_modules\\element-ui\\lib\\theme-chalk\\index.css'
+import '..\\node_modules\\_element-ui@2.12.0@element-ui\\lib\\theme-chalk\\index.css'
 
 import '..\\assets\\scss\\index.scss'
 
-import '..\\node_modules\\swiper\\dist\\css\\swiper.css'
+import '..\\node_modules\\_swiper@4.5.1@swiper\\dist\\css\\swiper.css'
 
 import _6f6c098b from '..\\layouts\\default.vue'
 import _2d297042 from '..\\layouts\\self.vue'
@@ -68,8 +67,6 @@ export default {
     }
     // Add $nuxt.error()
     this.error = this.nuxt.error
-    // Add $nuxt.context
-    this.context = this.$options.context
   },
 
   mounted() {
@@ -96,40 +93,6 @@ export default {
           this.isOnline = window.navigator.onLine
         }
       }
-    },
-    async refresh() {
-      const pages = getMatchedComponentsInstances(this.$route)
-
-      if (!pages.length) {
-        return
-      }
-      this.$loading.start()
-      const promises = pages.map(async (page) => {
-        const p = []
-
-        if (page.$options.fetch) {
-          p.push(promisify(page.$options.fetch, this.context))
-        }
-        if (page.$options.asyncData) {
-          p.push(
-            promisify(page.$options.asyncData, this.context)
-              .then((newData) => {
-                for (const key in newData) {
-                  Vue.set(page.$data, key, newData[key])
-                }
-              })
-          )
-        }
-        return Promise.all(p)
-      })
-      try {
-        await Promise.all(promises)
-      } catch (error) {
-        this.$loading.fail()
-        globalHandleError(error)
-        this.error(error)
-      }
-      this.$loading.finish()
     },
 
     errorChanged() {
