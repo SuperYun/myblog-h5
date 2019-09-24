@@ -1,66 +1,86 @@
 <template>
-    <div class="container">
-      <div style="height: 100vh;background-color: #000">
-        <video id="wz-video" class="video-js" controls preload="auto" width="100%" height="99%" muted>
-          <source src="http://wz-website-oss.chinaweizheng.com/pc/weizheng-promotional-film.mp4" type='video/mp4'>
-        </video>
-        </div>
+  <div class="container">
+    <div :class="['main', showMain ? 'showMain': '']">
+      <video id="wz-video" class="video-js" controls preload="auto" width="100%" height="99%" muted>
+        <source src="http://wz-website-oss.chinaweizheng.com/pc/weizheng-promotional-film.mp4" type='video/mp4'>
+      </video>
     </div>
+  </div>
 
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
+  import welcome from '@/components/welcome'
+  import welcome2 from '@/components/welcome2'
+  import welcome3 from '@/components/welcome3'
 
-export default {
-  layout: 'self',
-  components: {
-    Logo
-  },
-  asyncData (){
+  export default {
+    layout: 'self',
+    components: {
+    },
+    data () {
+      return {
+        showMain: false
+      }
+    },
+    asyncData (){
       return {
       }
-  },
-  created () {
-  },
-  mounted() {
-  },
-  validate ({params}){
+    },
+    created () {
+    },
+    mounted() {
+      new Promise((resolve,reject) => {
+        setTimeout(() => {
+          welcome({message: '3', time: 1000})
+          resolve()
+        }, 1300)
+      }).
+      then(() => {
+        new Promise((resolve,reject) => {
+          setTimeout(() => {
+            welcome2({message: '2', time: 1000})
+            resolve()
+          }, 1300)
+        }).
+        then(() => {
+          new Promise((resolve,reject) => {
+            setTimeout(() => {
+              welcome3({message: '1', time: 1000})
+              resolve()
+            }, 1300)
+          })
+        })
+      })
+      setTimeout(() => {this.showMain = true}, 5000)
+    },
+    validate ({params}){
       console.log('+++++++++++',params)
-    return true
+      return true
+    }
   }
-}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss" scoped>
+  .container {
+    height: 100vh;
+    background-color: #7f828b;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    .main{
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      transform: translate(100%, 0);
+      transition: all 2s;
+    }
+    .showMain {
+      transform: translate(0, 0)
+    }
+  }
 </style>
