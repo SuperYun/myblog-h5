@@ -5,9 +5,9 @@
         <source src="http://wz-website-oss.chinaweizheng.com/pc/weizheng-promotional-film.mp4" type='video/mp4'>
       </video> -->
       <h1>黑人紫罢萨</h1>
-      <img src="./img/1.jpg" alt="">
+      <!-- <img src="./img/1.jpg" alt="">
       <img src="./img/3.jpg" alt="">
-      <img src="./img/2.jpg" alt="">
+      <img src="./img/2.jpg" alt=""> -->
 
       <div class="beianhao">
         <a href="http://www.beian.miit.gov.cn">湘ICP备 19021336号</a>
