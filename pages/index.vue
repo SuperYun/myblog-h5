@@ -8,6 +8,9 @@
       <img src="./img/1.jpg" alt="">
       <img src="./img/3.jpg" alt="">
       <img src="./img/2.jpg" alt="">
+      <img src="./img/1.jpg" alt="">
+      <img src="./img/3.jpg" alt="">
+      <img src="./img/2.jpg" alt="">
 
       <div class="beianhao">
         <a href="http://www.beian.miit.gov.cn">湘ICP备 19021336号</a>
